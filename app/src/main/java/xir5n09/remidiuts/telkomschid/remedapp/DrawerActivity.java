@@ -92,19 +92,11 @@ public class DrawerActivity extends AppCompatActivity
         Fragment fragment = null;
 
         if (id == R.id.nav_camera) {
-            fragment = new FotoDrawerFragment();
+            fragment = new FotoFragment();
             setTitle("Foto");
         } else if (id == R.id.nav_gallery) {
-            fragment = new BioDrawerFragment();
+            fragment = new BioFragment();
             setTitle("Bio");
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         getSupportFragmentManager().beginTransaction()

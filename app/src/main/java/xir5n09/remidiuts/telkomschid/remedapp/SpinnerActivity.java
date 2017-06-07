@@ -36,19 +36,18 @@ public class SpinnerActivity extends AppCompatActivity {
         spinner.setAdapter(new MyAdapter(
                 toolbar.getContext(),
                 new String[]{
-                        "Section 1",
-                        "Section 2",
-                        "Section 3",
+                        "Foto",
+                        "Bio",
                 }));
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Fragment fragment;
-                if (position == 1) {
-                    fragment = new Spinner2Fragment();
-                } else {
-                    fragment = PlaceholderFragment.newInstance(position + 1);
+                Fragment fragment = null;
+                if (position == 0) {
+                    fragment = new FotoFragment();
+                } else if (position == 1) {
+                    fragment = new BioFragment();
                 }
 
                 getSupportFragmentManager().beginTransaction()

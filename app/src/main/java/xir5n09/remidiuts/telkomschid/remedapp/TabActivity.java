@@ -133,27 +133,27 @@ public class TabActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            if (position == 1)
-                return new Tab2Fragment();
-            else
+            if (position == 0) {
+                return new FotoFragment();
+            } else if (position == 1) {
+                return new BioFragment();
+            }
                 return PlaceholderFragment.newInstance(position + 1);
         }
 
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Foto";
                 case 1:
-                    return "SECTION 2";
-                case 2:
-                    return "SECTION 3";
+                    return "Bio";
             }
             return null;
         }
